@@ -4,6 +4,11 @@ class User(models.Model):
     name=models.CharField(max_length=32)
     mail=models.EmailField()
 
+    def __repr__(self):
+        return '{}:{}'.format(self.pk,self.name)
+
+    __str__=__repr__
+
 class Entry(models.Model):
     STATUS_DRAFT='draft'
     STATUS_PUBLIC='public'
@@ -17,3 +22,8 @@ class Entry(models.Model):
     updated_at=models.DateTimeField(auto_now=True)
     status=models.CharField(choices=STATUS_SET,default=STATUS_DRAFT,max_length=8)
     author=models.ForeignKey(User,related_name='entries',on_delete=models.CASCADE)
+
+    def __repr__(self):
+        return '{}:{}'.format(self.pk,self.title)
+
+    __str__=__repr__

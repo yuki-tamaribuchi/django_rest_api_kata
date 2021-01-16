@@ -10,5 +10,5 @@ class UserSerializer(serializers.ModelSerializer):
 
 class EntrySerializer(serializers.ModelSerializer):
     class Meta:
-        model=Enrty
+        model=Entry
         fields=('title','body','created_at','status','author')

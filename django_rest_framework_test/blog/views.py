@@ -4,7 +4,7 @@ import django_filters
 from rest_framework import viewsets,filters
 
 from .models import User,Entry
-form .serializer import UserSerializer,EntrySerializer
+from .serializer import UserSerializer,EntrySerializer
 
 
 class UserViewSet(viewsets.ModelViewSet):
